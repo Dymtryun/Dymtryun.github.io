@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🖤CMD🖤</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Incluir JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  </head>
+  <body>
+    <div class="cmd hidden" id="cmdScreen">
+      <div class="cmd-content" id="cmdContent"></div>
+    </div>
+    <button id="loadButton">->CLICK aquí<-</button>
+
+    <script>
+      const loadButton = document.getElementById("loadButton");
+      const cmdScreen = document.getElementById("cmdScreen");
+      const cmdContent = document.getElementById("cmdContent");
+    
+      // Mensajes iniciales
+      const initialMessages = [
+        "C:\\> Procesando...file:///C:User/Downloads...",
+        "C:\\> Ejecutando...",
+      ];
+      let messageIndex = 0;
+    
+      // Función para generar una línea aleatoria
+      function getRandomLine() {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        const randomLength = Math.floor(Math.random() * (200 - 50 + 1)) + 50;
+        let randomLine = "";
+        for (let i = 0; i < randomLength; i++) {
+          randomLine += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+        return randomLine;
+      }
+    
+      // Función para agregar líneas aleatorias indefinidamente
+      function generateRandomLines() {
+        setInterval(() => {
+          const newLine = document.createElement("p");
+          newLine.textContent = getRandomLine();
+          cmdContent.appendChild(newLine);
+          cmdContent.scrollTop = cmdContent.scrollHeight;
+        }, 100); // Generar una línea nueva cada 100 ms
+      }
+    
+      // Función para mostrar los mensajes iniciales
+      function showInitialMessages() {
+        const messageInterval = setInterval(() => {
+          if (messageIndex < initialMessages.length) {
+            const newLine = document.createElement("p");
+            newLine.textContent = initialMessages[messageIndex];
+            cmdContent.appendChild(newLine);
+            cmdContent.scrollTop = cmdContent.scrollHeight;
+            messageIndex++;
+          } else {
+            clearInterval(messageInterval);
+            generateRandomLines();
+            downloadZipFile();
+          }
+        }, 1000);
+      }
+    
+      // Función para descargar un archivo ZIP con todos los textos
+      function downloadZipFile() {
+        const zip = new JSZip();
+    
+        // Archivos de texto y sus contenidos
+        const files = [
+          { name: "~CR&PTO$^*_1.txt", content: "1.\nBromita jsjsjs" },
+          { name: "~CR&PTO$^*_2.txt", content: "2.\nApoco y no se asusto?" },
+          { name: "~CR&PTO$^*_3.txt", content: "3.\nSise asusto?" },
+          { name: "~CR&PTO$^*_4.txt", content: "4.\nLa adoro" },
+          { name: "~CR&PTO$^*_5.txt", content: "5.\nAMO" },
+        ];
+    
+        // Añadir cada archivo al ZIP
+        files.forEach(file => {
+          zip.file(file.name, file.content);
+        });
+    
+        // Generar el archivo ZIP y descargarlo
+        zip.generateAsync({ type: "blob" }).then(function (content) {
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(content);
+          a.download = "For You.zip"; // Nombre del archivo ZIP
+          document.body.appendChild(a);
+          a.click(); // Simula el clic en el enlace
+          document.body.removeChild(a); // Limpia el DOM
+          URL.revokeObjectURL(a.href); // Libera la URL creada
+        });
+      }
+    
+      loadButton.addEventListener("click", function () {
+        loadButton.classList.add("hidden");
+        cmdScreen.classList.remove("hidden");
+        simulateLoading();
+      });
+    
+      function simulateLoading() {
+        cmdContent.innerHTML = ""; // Limpiar contenido previo
+        const loadingMessage = document.createElement("p");
+        loadingMessage.textContent = "C:\\> Cargando...";
+        cmdContent.appendChild(loadingMessage);
+        cmdContent.scrollTop = cmdContent.scrollHeight;
+    
+        // Esperar 5 segundos antes de mostrar los mensajes iniciales
+        setTimeout(() => {
+          cmdContent.innerHTML = "";
+          showInitialMessages();
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>
