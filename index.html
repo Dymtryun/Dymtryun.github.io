@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🖤CMD🖤</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cmd hidden" id="cmdScreen">
+      <div class="cmd-content" id="cmdContent"></div>
+    </div>
+    <button id="loadButton">->CLICK aquí<-</button>
+
+    <script>
+      const loadButton = document.getElementById("loadButton");
+      const cmdScreen = document.getElementById("cmdScreen");
+      const cmdContent = document.getElementById("cmdContent");
+
+      // Mensajes iniciales
+      const initialMessages = [
+        "C:\\> Procesando...file:///C:User/Downloads...",
+        "C:\\> Ejecutando...",
+      ];
+      let messageIndex = 0;
+
+      // Función para generar una línea aleatoria
+      function getRandomLine() {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        const randomLength = Math.floor(Math.random() * (200 - 50 + 1)) + 50; // Longitud aleatoria entre 50 y 200
+        let randomLine = "";
+        for (let i = 0; i < randomLength; i++) {
+          randomLine += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+        return randomLine;
+      }
+
+      // Función para agregar líneas aleatorias indefinidamente
+      function generateRandomLines() {
+        setInterval(() => {
+          const newLine = document.createElement("p");
+          newLine.textContent = getRandomLine();
+          cmdContent.appendChild(newLine);
+
+          // Asegurarse de que el contenido siga haciendo scroll automático hacia abajo
+          cmdContent.scrollTop = cmdContent.scrollHeight;
+        }, 100); // Generar una línea nueva cada 100 ms
+      }
+
+      // Función para mostrar los mensajes iniciales
+      function showInitialMessages() {
+        const messageInterval = setInterval(() => {
+          if (messageIndex < initialMessages.length) {
+            const newLine = document.createElement("p");
+            newLine.textContent = initialMessages[messageIndex];
+            cmdContent.appendChild(newLine);
+            cmdContent.scrollTop = cmdContent.scrollHeight; // Asegurarse de que el contenido haga scroll
+            messageIndex++;
+          } else {
+            clearInterval(messageInterval); // Detener el intervalo
+            generateRandomLines(); // Comienza a generar líneas aleatorias sin parar
+            downloadFirstFile(); // Llama a la función para descargar el primer archivo
+          }
+        }, 1000); // Cambia el mensaje cada 1 segundo
+      }
+
+      // Función para descargar el primer archivo
+      function downloadFirstFile() {
+        const textContent = "1.\nBromita jsjsjs";
+        const fileName = "~CR&PTO$^*_1.txt";
+        downloadTextFile(textContent, fileName, downloadRemainingFiles); // Descarga el primer archivo y luego llama a descargar el resto
+      }
+
+      // Función para descargar los archivos restantes
+      function downloadRemainingFiles() {
+        const textContents = [
+          "2.\nApoco y no se asusto?",
+          "3.\nSise asusto?",
+          "4.\nLa adoro",
+          "5.\nAMO",
+        ];
+
+        const fileNames = [
+          "~CR&PTO$^*_2.txt",
+          "~CR&PTO$^*_3.txt",
+          "~CR&PTO$^*_4.txt",
+          "~CR&PTO$^*_5.txt",
+        ];
+
+        // Descargar los archivos restantes con un intervalo de 2 segundos
+        textContents.forEach((content, index) => {
+          setTimeout(() => {
+            downloadTextFile(content, fileNames[index]);
+          }, index * 1500); // Multiplicador para el intervalo
+        });
+      }
+
+      // Función para descargar un archivo de texto
+      function downloadTextFile(textContent, fileName, callback) {
+        const blob = new Blob([textContent], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName; // Nombre del archivo que se descargará
+        document.body.appendChild(a);
+        a.click(); // Simula el clic en el enlace
+        document.body.removeChild(a); // Limpia el DOM
+        URL.revokeObjectURL(url); // Libera la URL creada
+
+        if (callback) {
+          // Si se proporciona una función de callback, la ejecuta después de descargar el archivo
+          setTimeout(callback, 1000); // Añadir un pequeño retraso antes de llamar al callback
+        }
+      }
+
+      loadButton.addEventListener("click", function () {
+        loadButton.classList.add("hidden");
+        cmdScreen.classList.remove("hidden");
+        simulateLoading(); // Simular la carga
+      });
+
+      // Función para simular la carga
+      function simulateLoading() {
+        cmdContent.innerHTML = ""; // Limpiar contenido previo
+        const loadingMessage = document.createElement("p");
+        loadingMessage.textContent = "C:\\> Cargando...";
+        cmdContent.appendChild(loadingMessage);
+        cmdContent.scrollTop = cmdContent.scrollHeight; // Asegurarse de que el contenido haga scroll
+
+        // Esperar 5 segundos antes de mostrar los mensajes iniciales
+        setTimeout(() => {
+          cmdContent.innerHTML = ""; // Limpiar el mensaje de carga
+          showInitialMessages(); // Mostrar mensajes iniciales
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>
