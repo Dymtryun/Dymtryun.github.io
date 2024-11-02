@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>♾︎INF♾︎</title>
+
+    <script src="https://raw.githack.com/strangerintheq/rgba/0.0.5/rgba.js"></script>
+    <style>
+      body {
+        background-color: #070404; /* Fondo oscuro */
+        color: #e7e0e0; /* Texto claro */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      /* Estilos para el navbar ajustado */
+      .navbar {
+        background-color: #000000;
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 10px;
+        width: 100vw;
+        box-sizing: border-box;
+        margin: 0;
+        z-index: 10;
+        position: relative;
+      }
+
+      .navbar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        position: relative;
+        background-color: #8f1c08cb;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 100px;
+        width: 350px;
+        border: 5px solid #f81d78;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .navbar a span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(192, 17, 17);
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .navbar a:hover {
+        transform: scale(1.1);
+      }
+
+      .navbar a:hover img {
+        filter: brightness(70%);
+      }
+
+      .navbar a:hover span {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      /* Estilo del h1 */
+      h1 {
+        position: fixed;
+        z-index: 50; /* Asegura que esté por encima */
+        top: 100px; /* Ajusta esta propiedad para moverlo más abajo */
+        width: 100%;
+        text-align: center;
+        color: white; /* Asegura que sea visible */
+        font-size: 88px; /* Tamaño más grande para visibilidad */
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para contraste */
+      }
+
+      /* Canvas para el efecto RGB */
+      #canvas {
+        margin-top: 20px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Estilos para el contador */
+      .contador {
+        font-size: 30px;
+        font-weight: bold;
+        position: fixed;
+        bottom: 20px;
+        text-align: center;
+        width: 100%;
+        color: white; /* Cambiado a blanco */
+      }
+
+      /* Estilos para la fecha */
+      .fecha {
+        font-size: 30px;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px; /* Espacio entre la fecha y el contador */
+        text-align: center;
+        width: 100%;
+        color: white; /* Cambiado a blanco */
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>❣︎♾︎INFINITE♾︎❣︎</h1>
+
+    <!-- Cuadro de navegación con imágenes y texto superpuesto -->
+    <div class="navbar">
+      <a href="index.html" class="navbar-item">
+        <img
+          src="https://i.pinimg.com/236x/6e/ee/0b/6eee0b8edf8edf27d14eb7960e76cb64.jpg"
+          alt="Página 1"
+        />
+        <span> A </span>
+      </a>
+      <a href="pagina2.html" class="navbar-item">
+        <img
+          src="https://i.pinimg.com/564x/cc/89/e3/cc89e36c69c850f5cb2809fa422f6429.jpg"
+          alt="Página 2"
+        />
+        <span> M </span>
+      </a>
+      <a href="pagina3.html" class="navbar-item">
+        <img
+          src="https://i.pinimg.com/236x/1e/cb/52/1ecb5222004d102f44dea107adfdd6c1.jpg"
+          alt="Página 3"
+        />
+        <span> O</span>
+      </a>
+    </div>
+
+    <header>
+      <canvas id="canvas" width="600" height="400"></canvas>
+    </header>
+
+    <!-- Contador de tiempo transcurrido desde el 21/10/2023 -->
+    <div class="fecha">Days</div>
+    <div class="contador">
+      <span id="dias"></span>d : <span id="horas"></span>h :
+      <span id="minutos"></span>m : <span id="segundos"></span>s
+    </div>
+
+    <audio id="miAudio" autoplay loop>
+      <source src="fondomusic.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+      // Lógica del contador
+      function actualizarCalendario() {
+        const fechaInicio = new Date("2023-10-21T00:00:00"); // Fecha de inicio: 21/10/2023
+        const ahora = new Date();
+
+        // Diferencia en milisegundos entre la fecha actual y la fecha de inicio
+        const diferencia = ahora.getTime() - fechaInicio.getTime();
+
+        // Convertir la diferencia a días, horas, minutos y segundos
+        const segundosTotales = Math.floor(diferencia / 1000);
+        const dias = Math.floor(segundosTotales / (3600 * 24));
+        const horas = Math.floor((segundosTotales % (3600 * 24)) / 3600);
+        const minutos = Math.floor((segundosTotales % 3600) / 60);
+        const segundos = segundosTotales % 60;
+
+        // Mostrar el contador en la página
+        document.getElementById("dias").innerText = dias;
+        document.getElementById("horas").innerText = String(horas).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutos").innerText = String(minutos).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("segundos").innerText = String(
+          segundos
+        ).padStart(2, "0");
+      }
+
+      // Actualizar el calendario cada segundo
+      setInterval(actualizarCalendario, 1000);
+
+      // Código para el efecto RGB en el canvas
+      const canvas = document.getElementById("canvas");
+      const gl = canvas.getContext("webgl");
+
+      const vertexShaderSource = `
+        attribute vec2 a_position;
+        varying vec2 v_uv;
+
+        void main() {
+          v_uv = a_position * 0.5 + 0.5;
+          gl_Position = vec4(a_position, 0, 1);
+        }
+      `;
+
+      const fragmentShaderSource = `
+        precision mediump float;
+        varying vec2 v_uv;
+        uniform float u_time;
+
+        void main() {
+          vec2 uv = v_uv * 2.0 - 1.0;
+          float r = 0.05 * cos(2.0 * atan(uv.y, uv.x));
+          float d = dot(uv, uv);
+          float s = 0.0003 / sqrt(d);
+          float c = 1.0 - smoothstep(r, r + s, d) - smoothstep(r, r - s, d);
+          
+          vec3 p = vec3(0.5, 0.2, 0.33);
+          r = sqrt(r);
+          d = pow(d, 0.2) * 25.0;
+
+          for (float i = 1e-6; i < 1.0; i += 0.05) {
+            float t = 1.0 + u_time * 1.5 + i;
+            vec2 uv2 = uv + vec2(cos(t), sin(t)) * r;
+            vec3 color = vec3(sin(t * 4.0), cos(t * 3.0), sin(t * 7.0));
+            c = smoothstep(i / d, 0.0, length(uv2));
+            gl_FragColor += vec4(p * (1.0 + color) * c, 1.);   
+          }
+        }
+      `;
+
+      function compileShader(source, type) {
+        const shader = gl.createShader(type);
+        gl.shaderSource(shader, source);
+        gl.compileShader(shader);
+        if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+          return shader;
+        }
+        console.error(gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+      }
+
+      const vertexShader = compileShader(vertexShaderSource, gl.VERTEX_SHADER);
+      const fragmentShader = compileShader(
+        fragmentShaderSource,
+        gl.FRAGMENT_SHADER
+      );
+      const program = gl.createProgram();
+      gl.attachShader(program, vertexShader);
+      gl.attachShader(program, fragmentShader);
+      gl.linkProgram(program);
+      gl.useProgram(program);
+
+      const positionBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+      gl.bufferData(
+        gl.ARRAY_BUFFER,
+        new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
+        gl.STATIC_DRAW
+      );
+
+      const positionLocation = gl.getAttribLocation(program, "a_position");
+      gl.enableVertexAttribArray(positionLocation);
+      gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+      const timeLocation = gl.getUniformLocation(program, "u_time");
+
+      function render(time) {
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.uniform1f(timeLocation, time * 0.001);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+      }
+
+      render();
+    </script>
+
+    
+  </body>
+</html>

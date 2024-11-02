@@ -1,0 +1,116 @@
+/* Estilos de la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  position: relative;
+  background-color: #8f1c08cb;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100px;
+  width: 350px;
+  display: block;
+  border: 5px solid #f81d78;
+}
+
+.navbar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(192, 17, 17);
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar-item:hover {
+  transform: scale(1.1);
+}
+
+.navbar-item:hover img {
+  filter: brightness(70%);
+}
+
+.navbar-item:hover span {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-image: url("https://i.pinimg.com/236x/c2/9b/6d/c29b6dcbf893568ac826890778753477.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Contenedor centrado con bordes redondeados */
+.rounded-box {
+  width: 400px;
+  height: 300px;
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del contenido dentro del rectángulo */
+.box-content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+h2,
+p {
+  margin: 0;
+  color: #333;
+}
+
+div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px; /* Mantén el espacio ajustado */
+  transform: scale(0.9);
+}
+
+div > img {
+  border-radius: 3px;
+  width: 109%; /* Mantén el ancho en 100% para que ocupe el contenedor */
+  height: auto;
+  box-shadow: 0px 0px 30px #65f896;
+  transition: transform 0.3s; /* Añadir transición para el efecto de escala */
+}
+
+/* Efecto de agrandamiento al pasar el mouse */
+div > img:hover {
+  transform: scale(2.1); /* Aumentar el tamaño al 110% al pasar el mouse */
+}
