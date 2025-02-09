@@ -126,6 +126,6 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
+  z-index: 9999; /* Se superpone sobre todo */
+  pointer-events: none; /* Evita interacción */
 }
