@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍓Strawberry🍓</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="emoji.css">
+    <style>
+      /* Estilo para el efecto de desvanecimiento */🦦
+      body {
+        font-family: Arial, sans-serif;
+        overflow-x: hidden; /* Evita el desplazamiento horizontal */
+      }
+
+      .fade {
+        opacity: 1;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(0);
+      }
+
+      .fade-out {
+        opacity: 0;
+        transform: translateY(-20px) scale(1.1); /* Mueve el elemento hacia arriba y lo agranda un poco */
+      }
+
+      .fade-out-bottom {
+        opacity: 0;
+        transform: translateY(20px) scale(1.1); /* Mueve el elemento hacia abajo y lo agranda un poco */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cuadro de navegación con imágenes y texto superpuesto -->
+    <div class="navbar">
+        <a href="index.html" class="navbar-item">
+            <img
+              src="pinkGif.gif"
+              alt="Inicio"
+            />
+            <span>🍓</span>
+        </a>
+
+        <a href="pagina2.html" class="navbar-item">
+            <img
+              src="greengif.gif"
+              alt="frog"
+            />
+            <span>🐸 </span>
+          </a>
+
+        <a href="pagina3.html" class="navbar-item">
+            <img
+                src="ininiteGif.gif"
+                alt="♾︎INF♾︎"
+            />
+            <span>♾️</span>
+        </a>
+    </div>
+
+    <div class="gifContainer">
+      <!-- Contenedor para el GIF a la izquierda -->
+      <div class="videoContainer">
+        <img id="gif" src="fresas 2.gif" alt="GIF" />
+      </div>
+      <!-- Contenedor para el mismo GIF a la derecha -->
+      <div class="videoContainer">
+        <img id="gif2" src="fresas 2.gif" alt="GIF" />
+      </div>
+    </div>
+
+
+
+    <!-- Aquí va el contenido visible de la página -->
+    <div id="contenido">
+      <h1 class="fade"><center>🍓 1 YEAR Y POCO MAS🍓</center></h1>
+      <p class="fade">
+        Ya ha pasado un año desde que nos conocimos por primera vez. ¡FUAA! Es
+        por mucho la amistad más larga con la que<br /> he estado hablando y
+        manteniendo.
+      </p>
+      <p class="fade">
+        Valla tantas cosas que ha pasado y hemos pasado durante todo ese año y aun asi hemos logrado sobrevivir un año completo. <br>
+        Hay muchas cosas en las que me ha ayudado y quiero agradecerle.
+      </p>
+      
+      <p class="fade">
+        <strong>G</strong>racias por ser mi amiga y más que solo mi amiga. Por usted pude saber
+        lo que es tener a alguien más y poder pasar<br /> ratos/momentos con usted.
+        Algunos; emocionales, divertidos, tristes, pero sobre todo momentos
+        felices.
+      </p>
+      <p class="fade">
+        <strong>G</strong>racias a usted por darme la oportunidad de tener a alguien con quien
+        hablar y poder compartir mis pensamientos e ideas.<br />Y vaya que
+        hablamos mucho (jsjsjs).
+      </p>
+      <p class="fade">
+        <strong>G</strong>racias por estar conmigo y usar su tiempo en mí.<em>
+          "QUE EL TIEMPO ES LO MÁS VALIOSO"</em
+        >. Muchas veces ha querido alejarme<br />  por varios motivos, pero usted es
+        muy valiosa para mí como para dejarla ir así porque sí. Desde la primera
+        vez que se asustó <br />y me bloqueó (jsjsjs)
+        ya sentía que era algo especial para mí.
+      </p>
+      <p class="fade">
+        <strong>G</strong>racias por interesarse en mí; por quererme, preocuparse, alentarme y
+        más. Ya de por sí tengo mucha confianza en usted,<br /> cosa que no he tenido
+        en nadie más.
+      </p>
+      <p class="fade">
+        Ambos nos tenemos el uno al otro, lo sabe y se lo digo: cualquier cosa,
+        puede contar conmigo o pedirme ayuda, que siempre<br /> la apoyaré en todo.
+        (Claro, depende; igual no puedo obligarle a cambiar en algo que no
+        quiera realmente o por terceros).
+      </p>
+
+      <p class="fade">
+        Yo pensaba que nunca encontraria a alguien con quien de verdad sentiria algo y que aquella persona realmente sienta<br /> que me ame;  
+        Realmente se me  hace imposible encontrar a alguien como usted 'Deporsi se me es dificil encontrar a alguien<br />  con quien pueda compartir'
+      </p> 
+      <p class="fade">
+        La suerte y lo feliz que me hace haberla podido  conocer' igual a mi se me es increible tener a alguien con quien pueda hablar' <br /> 
+        Talvez le parezca normal 'Pero para mi eso es algo muy especial que tengo'
+      </p>
+      <p class="fade">
+       Por eso antes de conocerla bien' solo me importaba las cosa materiales  (Pensaba que asi sentiria que tengo algo) y<br />
+         tambien actividades que tengan que ver con adrenalina / velocidad (Asi me desconeto de la reaidad aveces)<br />
+         [Pero usted me hizo volver a querer a alguien y querer estar con ese alguien]
+      </p>
+      <p class="fade">
+        Tantas cosas que siento hacia usted, solo lo resumo en  (AMO)
+      </p>
+    </div>
+
+
+    <div class="emoji-container">
+      <div class="emoji" onclick="mostrarPopup('¡Salva, eu estoy aqui evocado por la eternità!')">🐱</div>
+  </div>
+
+  <!-- Popup (oculto inicialmente) -->
+  <div id="popup-overlay" class="popup-overlay"></div>
+  <div id="popup" class="popup">
+      <p id="popup-mensaje"></p>
+      <button onclick="cerrarPopup()">Cerrar</button>
+  </div>
+
+    <script>
+      const mensajesAlternativos = [
+        " Por que la insistencia? 🐾",
+        " OH, vaya casualidad que abra otro texto. ",
+    " ¡Miau!",
+    " ..¡Miau! ",
+    " ...¡Miau! ",
+    " miuw / 4 /    ",
+    " Quizas habra alguna storia detras de todo?",
+    " ¡Miau? ",
+];
+
+
+
+let popupAbierto = false;
+let clicsDesdeApertura = 0;
+let indiceMensaje = 0; // Controla cuál mensaje alternativo mostrar
+
+function mostrarPopup(mensajeInicial) {
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('popup-overlay');
+    const mensaje = document.getElementById('popup-mensaje');
+
+    if (!popupAbierto) {
+        // Primer clic: abrir popup
+        mensaje.textContent = mensajeInicial;
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+        popupAbierto = true;
+        clicsDesdeApertura = 0;
+        indiceMensaje = 0;
+    } else {
+        clicsDesdeApertura++;
+
+        // Cada 2 clics y mientras queden mensajes, mostrar uno nuevo
+        if (clicsDesdeApertura % 2 === 0 && indiceMensaje < mensajesAlternativos.length) {
+            mensaje.textContent = mensajesAlternativos[indiceMensaje];
+            indiceMensaje++;
+        }
+        // Si ya se mostraron todos los mensajes, no hace nada
+    }
+}
+
+function cerrarPopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+    popupAbierto = false;
+    clicsDesdeApertura = 0;
+    indiceMensaje = 0;
+}
+
+    </script>
+
+
+    <script>
+      // Función para manejar el efecto de desvanecimiento al desplazarse
+      let lastScrollTop = 0; // Guarda la última posición de desplazamiento
+      window.addEventListener("scroll", function () {
+        const elements = document.querySelectorAll(".fade");
+        const scrollY = window.scrollY;
+
+        elements.forEach(function (element) {
+          const elementY = element.getBoundingClientRect().top + window.scrollY;
+          const windowHeight = window.innerHeight;
+
+          // Desaparecer el elemento si está a punto de salir de la vista por la parte superior
+          if (elementY < scrollY + 50 && lastScrollTop < scrollY) {
+            // Desplazándose hacia abajo
+            element.classList.add("fade-out");
+          } else if (
+            elementY > scrollY + windowHeight - 50 &&
+            lastScrollTop > scrollY
+          ) {
+            // Desplazándose hacia arriba
+            element.classList.add("fade-out-bottom");
+          } else {
+            element.classList.remove("fade-out", "fade-out-bottom"); // Restablecer
+          }
+        });
+
+        lastScrollTop = scrollY; // Actualiza la última posición de desplazamiento
+      });
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+/* Estilos generales */
+
+  body {
+    background-image: url("data:image/jpeg;base64,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");
+    background-size: cover; /* Ajusta la imagen para cubrir toda la página */
+    background-position: center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
+  }
+  
+/* Barra de navegación - Versión modificada */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+
+.navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: relative;
+    background-color: #fff9f8cb;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100px;
+    width: 300px;
+    border: 5px solid #1df866;
+    z-index: 1;
+}
+
+.navbar-item.active {
+    border-color: #65f896;
+    box-shadow: 0 0 15px #65f896;
+}
+
+.navbar-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(137, 235, 58);
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+
+
+/* Estilo de categoría modificado */
+.category {
+    position: relative;
+    border: 3px solid #47e638;
+    border-radius: 15px;
+    padding: 30px 20px 20px;
+    box-shadow: 0 0 15px rgba(71, 230, 56, 0.5);
+    margin-top: 50px;
+    overflow: hidden; /* Esto evita que las líneas sobresalgan */
+}
+
+.category-title-wrapper {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.category-title {
+
+    padding: 0 20px;
+    font-size: 1.8rem;
+    color: #47e638;
+    text-shadow: 0 0 15px rgba(71, 230, 56, 0.9);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    animation: neonText 1.5s infinite alternate;
+    z-index: 2; /* Asegura que el título esté sobre las líneas */
+}
+
+.category-title::before,
+.category-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 322%; /* Reducido a la mitad del ancho */
+    height: 3px;
+    background-color: #47e638;
+    box-shadow: 0 0 10px rgba(71, 230, 56, 0.8);
+}
+
+.category-title::before {
+    right: 100%;
+    /* Eliminado margin-right ya que usamos width: 50% */
+}
+
+.category-title::after {
+    left: 100%;
+    /* Eliminado margin-left ya que usamos width: 50% */
+}
+
+/* Añade estos pseudoelementos al contenedor para las líneas que no sobresalen */
+.category::before,
+.category::after {
+    content: "";
+    position: absolute;
+    top: -3px; /* Alineado con el borde */
+    height: 3px;
+    background-color: #47e638;
+    box-shadow: 0 0 10px rgba(71, 230, 56, 0.8);
+    z-index: 1;
+}
+
+.category::before {
+    left: 0;
+    right: 50%;
+    margin-right: 40px; /* Ajuste para el espacio del título */
+}
+
+.category::after {
+    left: 50%;
+    right: 0;
+    margin-left: 40px; /* Ajuste para el espacio del título */
+}
+
+/* Contenedor principal de la galería */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espacio entre imágenes */
+    row-gap: 30px; /* Espacio adicional entre filas */
+    padding: 20px;
+    justify-items: center; /* Centra los items horizontalmente */
+}
+
+/* Estilo para cada item de la galería - CUADRADO MÁS GRANDE */
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1/1; /* Mantiene relación cuadrada */
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden;
+    border: 2px solid #47e638;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px rgba(71, 230, 56, 0.4);
+    max-width: 180px; /* Tamaño más grande */
+}
+
+/* Efecto hover para los items */
+.gallery-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(71, 230, 56, 0.9);
+    border-color: #65f896;
+    z-index: 2;
+}
+
+/* Estilo para las imágenes */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto hover para imágenes */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilo para "COMING SOON" */
+.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #47e638;
+    font-weight: bold;
+    font-size: 1rem; /* Texto un poco más grande */
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(71, 230, 56, 0.9);
+    animation: neonText 1.5s infinite alternate;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animación neon */
+@keyframes neonText {
+    from {
+        text-shadow: 0 0 5px rgba(71, 230, 56, 0.7);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(71, 230, 56, 1), 
+                    0 0 25px rgba(71, 230, 56, 0.7);
+    }
+}
+
+/* Versión responsiva */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets grandes */
+    }
+    
+    .gallery-item {
+        max-width: 200px; /* Aún más grande en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        gap: 15px;
+        row-gap: 25px;
+    }
+    
+    .gallery-item {
+        max-width: 220px; /* Más grande en tablets pequeñas */
+        border-radius: 15px;
+    }
+    
+    .coming-soon {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .gallery-item {
+        max-width: 250px; /* Muy grande en móviles */
+        height: 250px;
+    }
+    
+    .coming-soon {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: zoom 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #47e638;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-shadow: 0 0 10px rgba(71, 230, 56, 0.9);
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #65f896;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #imgCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Añadir efecto de hover al cursor para las imágenes */
+  .gallery-item {
+    cursor: pointer;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 100.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Añade esto */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }

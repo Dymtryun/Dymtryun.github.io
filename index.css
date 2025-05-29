@@ -1,0 +1,187 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: relative;
+    background-color: #8f1c08cb;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100px;
+    width: 300px; /* Establece un ancho uniforme para todos los cuadros */
+    border: 5px solid #f81d78; /* Añade el marco aquí */
+    z-index: 1; /* Evita que el contenido se superponga por detrás */
+  }
+  
+  .navbar-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .navbar-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(192, 17, 17);
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .navbar-item:hover {
+    transform: scale(1.1); /* Agranda el cuadro entero */
+    z-index: 10; /* Asegura que el cuadro tenga prioridad en la pila */
+  }
+  
+  .navbar-item:hover img {
+    filter: brightness(70%);
+  }
+  
+  .navbar-item:hover span {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Aumenta la opacidad del fondo del texto en hover */
+  }
+  
+  body {
+    background-image: url("https://i.pinimg.com/236x/e4/fa/29/e4fa29b3f6636a2e9bbb91ed5033af39.jpg");
+    background-size: cover; /* Ajusta la imagen para cubrir toda la página */
+    background-position: center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
+  }
+  
+  p {
+    margin: 60px; /* Margen de 20px en todos los lados */
+    padding: 20px; /* Padding opcional para crear espacio interno */
+    max-width: 2000px; /* Ancho máximo para evitar líneas muy largas */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  /* Estilos para los contenedores de los GIFs */
+  .gifContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed; /* Los GIFs se quedan fijos en la pantalla */
+    bottom: 0; /* Se asegura de que estén alineados con el fondo */
+  }
+  
+  /* Estilo para el contenedor de cada GIF */
+  .videoContainer {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .fade {
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 2s ease-in-out forwards; /* Duración de 2 segundos */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Comienza invisible */
+    }
+    to {
+      opacity: 1; /* Termina completamente visible */
+    }
+  }
+  
+  #contenido {
+    font-style: italic;
+  }
+
+  @media (max-width: 1024px) {
+    .navbar a {
+        width: 280px; /* Reducción ligera */
+        height: 90px; /* Altura ajustada */
+    }
+    
+    .navbar a span {
+        font-size: 18px; /* Texto un poco más pequeño */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Permite que los items fluyan en múltiples líneas */
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 5px; /* Padding reducido */
+    }
+    
+    .navbar a {
+        width: 30%; /* Ancho relativo */
+        min-width: 200px; /* Ancho mínimo */
+        height: 80px; /* Altura reducida */
+        margin: 0 5px; /* Espaciado mínimo */
+    }
+    
+    .navbar a span {
+        font-size: 16px; /* Texto más pequeño */
+        padding: 3px 8px; /* Padding reducido */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        width: 45%; /* Dos columnas en móviles muy pequeños */
+        min-width: 150px; /* Ancho mínimo reducido */
+        height: 70px; /* Altura más compacta */
+    }
+    
+    .navbar a span {
+        font-size: 14px; /* Texto más pequeño para móviles */
+    }
+    
+    /* Mantén los otros ajustes para cajas de contenido */
+    .dedication-box {
+        padding: 15px;
+    }
+    
+    .dedication-box h1 {
+        font-size: 1.8rem;
+    }
+    
+    .signature {
+        font-size: 1.5rem;
+    }
+    
+    .heart {
+        font-size: 2.5rem;
+    }
+}

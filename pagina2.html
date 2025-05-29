@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frog 🐸</title>
+    <link rel="stylesheet" href="pagina2.css" />
+    <link rel="stylesheet" href="emoji.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html" class="navbar-item active">
+        <img src="pinkGif.gif" alt="Inicio" />
+        <span>🍓</span>
+    </a>
+
+    <a href="pagina2.html" class="navbar-item active">
+        <img src="greengif.gif" alt="frog" />
+        <span>🐸</span>
+    </a>
+
+    <a href="pagina3.html" class="navbar-item active">
+        <img src="ininiteGif.gif" alt="♾︎INF♾︎" />
+        <span>♾️</span>
+    </a>
+  </div>
+
+
+  <!-- Modal para imagen ampliada -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="expandedImg">
+    <div id="imgCaption"></div>
+  </div>
+
+
+
+  <div class="category-container">
+    <!-- Primera categoría -->
+    <div class="category">
+      <div class="category-title-wrapper">
+        <h2 class="category-title">Dibujos</h2>
+      </div>
+      <div class="image-grid">
+
+
+        <!-- Fila 1 -->
+        <div class="gallery-item">
+          <img src="DEARLING.png" alt="Dibujo 1" onclick="openModal(this)">
+        </div>
+  
+        <!-- Fila 2 -->
+        <div class="gallery-item">
+          <div class="coming-soon">COMING SOON</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  <div class="category-container">
+    <!-- Segunda categoría con videos -->
+    <div class="category">
+      <div class="category-title-wrapper">
+        <h2 class="category-title">MUSICAS</h2>
+      </div>
+      <div class="image-grid">
+
+        <!-- Video 1 -->
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/mNPgj4DH-Bk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VVudMTk3Rik" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/NA79U-HxhkM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/vXftdPnKyk4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/AQc8dSkYjVU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/doJbORheLzw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        
+        
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/j8QEQXE3TSI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/diCIluF83So" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        
+
+        <div class="gallery-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/QbUJFg8yAHk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+          
+        
+    
+      </div>
+    </div>
+  </div>
+
+<div class="emoji-container">
+    <div class="emoji" onclick="mostrarPopup('Ehi, algunos de los videos contienen Copy@ por lo que no es posible que se reproduscan, pero al hacer clik te llevaran directamente al video.')">🐱</div>
+</div>
+
+<!-- Popup (oculto inicialmente) -->
+<div id="popup-overlay" class="popup-overlay"></div>
+<div id="popup" class="popup">
+    <p id="popup-mensaje"></p>
+    <button onclick="cerrarPopup()">Cerrar</button>
+</div>
+
+  <script>
+    const mensajesAlternativos = [
+    " Tengo curiosidad en saber que es lo que estas buscando",
+    "Bueno, por lo visto no se reinde ",
+    " La insistenia es una virtud o no? 🐾",
+    " Me encantaria poder tener libertad propia ",
+    " Estamos ya muy andentro, no? ",
+    "  Quizas no deberiamos seguir ",
+    " ...",
+    " Niyu  <script getBy>  /20/ <@*embed!!<script>",
+      " ¡Miau? "
+];
+
+
+
+let popupAbierto = false;
+let clicsDesdeApertura = 0;
+let indiceMensaje = 0; // Controla cuál mensaje alternativo mostrar
+
+function mostrarPopup(mensajeInicial) {
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('popup-overlay');
+    const mensaje = document.getElementById('popup-mensaje');
+
+    if (!popupAbierto) {
+        // Primer clic: abrir popup
+        mensaje.textContent = mensajeInicial;
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+        popupAbierto = true;
+        clicsDesdeApertura = 0;
+        indiceMensaje = 0;
+    } else {
+        clicsDesdeApertura++;
+
+        // Cada 2 clics y mientras queden mensajes, mostrar uno nuevo
+        if (clicsDesdeApertura % 2 === 0 && indiceMensaje < mensajesAlternativos.length) {
+            mensaje.textContent = mensajesAlternativos[indiceMensaje];
+            indiceMensaje++;
+        }
+        // Si ya se mostraron todos los mensajes, no hace nada
+    }
+}
+
+function cerrarPopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+    popupAbierto = false;
+    clicsDesdeApertura = 0;
+    indiceMensaje = 0;
+}
+
+  </script>
+
+
+  <script>
+    // Función para abrir el modal con la imagen ampliada
+function openModal(img) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("expandedImg");
+  const captionText = document.getElementById("imgCaption");
+  
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  captionText.innerHTML = img.alt;
+}
+
+// Función para cerrar el modal
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+// Cerrar al hacer clic en la X
+document.querySelector(".close").addEventListener("click", closeModal);
+
+// Cerrar al hacer clic fuera de la imagen
+document.getElementById("imageModal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeModal();
+  }
+});
+
+// Cerrar con la tecla ESC
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+  </script>
+
+</body>
+</html>
