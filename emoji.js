@@ -6,14 +6,14 @@ let clickTimer = null;
 let post20ClickCount = 0;
 
 const catComments = [
-    "¡Miau!,ahora soy un conejito jsjsj", "oh, aparecio otro?", "¿Tienes comida?",
+    "¡Miau!", "oh, aparecio otro?", "¿Tienes comida?",
     "¡Mira qué bigotes!", "¡Que divertido!, no crees?",
-    "WooW, ahora soy un conejito", "Quiero una lechuga",
+    "WooW, ahora soy un gato", "Quiero...",
     "¿Viste mi infinito?", "Este es mi lugar ahora",
-    "¡Saltar, saltar y saltar...!", "NO hay escapatoria",
+    "¡Saltar, correr y arrastrarse ...!", "NO hay escapatoria",
     "¿Me recordarán?", "Tengo sueño...", "Zzz...",
     "Ella es la única luz en la luna",
-    "El número / 8 / horizontal parece un infinito",
+    "El número / 8 / horizontal es un infinito",
     "¡No!", "Quiero salir... o no", "¿Dónde está mi... ?",
     "Esto es el..."
 ];
