@@ -8,9 +8,9 @@ let post20ClickCount = 0;
 const catComments = [
     "¡Miau!", "oh, aparecio otro?", "¿Tienes comida?",
     "¡Mira qué bigotes!", "¡Que divertido!, no crees?",
-    "Amo los peces y más cuando los pesco", "Quiero atún",
+    "WooW, ahora soy un conejito", "Quiero una lechuga",
     "¿Viste mi infinito?", "Este es mi lugar ahora",
-    "¡Correr, correr y correr ...!", "NO hay escapatoria",
+    "¡Saltar, saltar y saltar...!", "NO hay escapatoria",
     "¿Me recordarán?", "Tengo sueño...", "Zzz...",
     "Ella es la única luz en la luna",
     "El número / 8 / horizontal parece un infinito",
