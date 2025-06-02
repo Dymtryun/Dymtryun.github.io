@@ -8,7 +8,7 @@ let post20ClickCount = 0;
 const catComments = [
     "¡Miau!", "oh, aparecio otro?", "¿Tienes comida?",
     "¡Mira qué bigotes!", "¡Que divertido!, no crees?",
-    "WooW, ahora soy un gato", "Quiero...",
+    "WooW, ahora soy un gato", "Quiero atún ",
     "¿Viste mi infinito?", "Este es mi lugar ahora",
     "¡Saltar, correr y arrastrarse ...!", "NO hay escapatoria",
     "¿Me recordarán?", "Tengo sueño...", "Zzz...",
@@ -59,7 +59,7 @@ function createRandomCat() {
 
     const catEmoji = document.createElement('div');
     catEmoji.className = 'emoji cat-emoji';
-    catEmoji.textContent = '🐰';
+    catEmoji.textContent = '🐱';
 
     const catComment = document.createElement('div');
     catComment.className = 'cat-comment';
